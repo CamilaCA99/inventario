@@ -28,7 +28,7 @@
             </main>
             <footer class="flex flex-col justify-center items-center mt-5">
                 <p>si no tienes cuenta</p>
-                <p><a href="#" class="hover:pointer hover:text-blue-600 hover:underline">registrate pinchando aqui!</a></p>
+                <p><a href="{{ route('register') }}" class="hover:pointer hover:text-blue-600 hover:underline">registrate pinchando aqui!</a></p>
             </footer>
         </div>
     </div>
