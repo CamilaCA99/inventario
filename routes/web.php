@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,12 @@ Route::post('/add', [ProductoController::class, 'create']);
 Route::post('/edit', [ProductoController::class, 'update']);
 
 Route::delete('/delete', [ProductoController::class, 'destroy']);
+
+
+/*admin routes*/
+Route::controller(UserController::class)->group(function (){
+    Route::get('/users','index');
+    Route::post('/users/create', 'create');
+    Route::post('/users/update/{username}','update');
+    Route::delete('/users/delete/{username}','destroy');
+});

@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class LogoutController extends Controller
+class UserController extends Controller
 {
     public function index(){
-        return view();
+        return view('users.index');
     }
 }
