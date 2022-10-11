@@ -21,7 +21,12 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::get('/logout', [LogoutController::class, 'index']);
 
 
-Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::controller(RegisterController::class)->group(function (){
+    Route::get('/register','index')->name('register');
+    Route::post('register', 'create')->name('register.create');
+});
+
+
 
 Route::get('/home', [HomeController::class, 'index']);
 
