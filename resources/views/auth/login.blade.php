@@ -8,10 +8,8 @@
             <header class="mb-5">
                 <h4 class="text-xl font-bold">Bienvenido a tu sistema de inventario!</h4>
             </header>
-            <form action="">
-
+            <form action="{{route('login.store')}}" method="POST">
                 @csrf
-
                 <main class="grid gap-3">
                     <div class="flex flex-col">
                         <label class="font-bold" for="email">Correo electronico</label>

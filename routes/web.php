@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,19 +17,24 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
-Route::get('/login', [LoginController::class, 'index'])->name('login');
+
+Route::controller(LoginController::class)->middleware('guest')->group(function (){
+    Route::get('/login', 'index')->name('login');
+    Route::post('/login', 'store')->name('login.store');
+});
+
 
 Route::get('/logout', [LogoutController::class, 'index']);
 
 
 Route::controller(RegisterController::class)->group(function (){
     Route::get('/register','index')->name('register');
-    Route::post('register', 'create')->name('register.create');
+    Route::post('/register', 'store')->name('register.store');
 });
 
 
 
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index'])->middleware('auth')->name('home');
 
 
 Route::get('/producto', [ProductoController::class, 'index']); /*informacion productos*/
