@@ -3,7 +3,7 @@
 Crea tu cuenta!
 @endsection
 @section('content')
-<div class="w-screen h-screen flex items-center justify-center p-2" style='background-color: #eee;'>
+<div class="w-screen h-screen flex items-center justify-center p-2">
     <div class="bg-white p-10 rounded-3xl shadow-xl lg:grid lg:grid-cols-2 lg:gap-5">
         <header class="mb-5">
             <h4 class="text-xl font-bold">Bienvenido rellena este formulario para crear una cuenta!</h4>

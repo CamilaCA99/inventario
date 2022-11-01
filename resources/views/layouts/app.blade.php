@@ -8,7 +8,7 @@
     @vite('resources/js/app.js')
     <title>@yield('title')</title>
 </head>
-<body>
+<body style='background-color: #eee;'>
     @yield('content')
 </body>
 </html>
