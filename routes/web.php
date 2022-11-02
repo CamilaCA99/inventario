@@ -33,11 +33,16 @@ Route::controller(RegisterController::class)->group(function (){
 });
 
 
+Route::controller(ProductoController::class)->group(function(){
+    Route::get('/producto', 'index')->name('producto');
+    Route::post('/producto','store')->name('producto.store');
+});
+
 
 Route::get('/home', [HomeController::class, 'index'])->middleware('auth')->name('home');
 
 
-Route::get('/producto', [ProductoController::class, 'index']); /*informacion productos*/
+
 
 Route::post('/add', [ProductoController::class, 'create']);
 

@@ -13,7 +13,9 @@
                 <main class="grid gap-3">
                     <div class="flex flex-col">
                         <label class="font-bold" for="email">Correo electronico</label>
+                        @error('email') {{$message}} @enderror
                         <input class="p-2 border-4 border-l-orange-500" type="email" name="email" id="email" placeholder="Ingresa tu correo de registro">
+                        
                     </div>
                     <div class="flex flex-col">
                         <label class="font-bold" for="password">Password</label>
