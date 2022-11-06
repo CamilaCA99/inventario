@@ -59,3 +59,16 @@ Route::controller(UserController::class)->group(function (){
     Route::post('/users/update/{username}','update');
     Route::delete('/users/delete/{username}','destroy');
 });
+
+
+
+//rutas de prueba
+Route::get('/producto_detalle', function(){
+    return view('producto_detalle');
+});
+Route::get('/trabajador', function(){
+    return view('registrar_trabajador');
+});
+Route::get('/trabajadores', function(){
+    return view('trabajadores');
+});

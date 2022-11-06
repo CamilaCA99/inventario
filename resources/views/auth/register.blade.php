@@ -21,7 +21,7 @@ Crea tu cuenta!
                             <span class="text-red-600"><small>*{{$message}}</small></span>
                             @enderror
                         </div>
-                        <input class="p-2 border-4 border-l-orange-500 @error('rut') border-l-red-700 @enderror" type="text" name="rut" id="rut" placeholder="Ingresa el rut" value="{{old('rut')}}">
+                        <input class="p-2 border-4 border-gray-300 border-l-orange-500 @error('rut') border-l-red-700 @enderror" type="text" name="rut" id="rut" placeholder="Ingresa el rut" value="{{old('rut')}}">
                     </div>
 
                     <div class="flex flex-col">
@@ -31,7 +31,7 @@ Crea tu cuenta!
                             <span class="text-red-600"><small>*{{$message}}</small></span>
                             @enderror
                         </div>
-                        <input class="p-2 border-4 border-l-orange-500 @error('name') border-l-red-700 @enderror" type="text" name="name" id="name" placeholder="De la empresa si!" value="{{old('name')}}">
+                        <input class="p-2 border-4 border-gray-300 border-l-orange-500 @error('name') border-l-red-700 @enderror" type="text" name="name" id="name" placeholder="De la empresa si!" value="{{old('name')}}">
                     </div>
 
                     <div class="flex flex-col">
@@ -41,7 +41,7 @@ Crea tu cuenta!
                             <span class="text-red-600"><small>*{{$message}}</small></span>
                             @enderror
                         </div>
-                        <input class="p-2 border-4 border-l-orange-500 @error('email') border-l-red-700 @enderror" type="email" name="email" id="email" placeholder="ejemplo@empresa.com" value="{{old('email')}}">
+                        <input class="p-2 border-4 border-gray-300 border-l-orange-500 @error('email') border-l-red-700 @enderror" type="email" name="email" id="email" placeholder="ejemplo@empresa.com" value="{{old('email')}}">
                     </div>
 
                     <div class="flex flex-col">
@@ -51,7 +51,7 @@ Crea tu cuenta!
                             <span class="text-red-600"><small>*{{$message}}</small></span>
                             @enderror
                         </div>
-                        <input class="p-2 border-4 border-l-orange-500 @error('password') border-l-red-700 @enderror" type="password" name="password" id="password">
+                        <input class="p-2 border-4 border-gray-300 border-l-orange-500 @error('password') border-l-red-700 @enderror" type="password" name="password" id="password">
                     </div>
 
                     <div class="flex flex-col">
@@ -61,7 +61,7 @@ Crea tu cuenta!
                             <span class="text-red-600"><small>*{{$message}}</small></span>
                             @enderror
                         </div>
-                        <input class="p-2 border-4 border-l-orange-500 @error('password_confirmation') border-l-red-700 @enderror" type="password" name="password_confirmation" id="password_confirmation">
+                        <input class="p-2 border-4 border-gray-300 border-l-orange-500 @error('password_confirmation') border-l-red-700 @enderror" type="password" name="password_confirmation" id="password_confirmation">
 
                         
 
