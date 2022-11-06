@@ -6,7 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductoController;
-
+use App\Http\Controllers\LogoutController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,7 +25,7 @@ Route::controller(LoginController::class)->middleware('guest')->group(function (
 });
 
 
-Route::get('/logout', [LogoutController::class, 'index']);
+Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 
 Route::controller(RegisterController::class)->group(function (){
