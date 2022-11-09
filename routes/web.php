@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\TrabajadorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,6 +40,11 @@ Route::controller(ProductoController::class)->group(function(){
     Route::post('/producto','store')->name('producto.store');
 });
 
+Route::controller(TrabajadorController::class)->group(function(){
+    Route::get('/trabajadores','index')->name('trabajadores');
+    Route::get('/registrar_usuario', 'show')->name('trabajadores.show');
+    Route::post('/registrar_usuario', 'create')->name('trabajadores.post');
+});
 
 Route::get('/home', [HomeController::class, 'index'])->middleware('auth')->name('home');
 
@@ -68,7 +74,4 @@ Route::get('/producto_detalle', function(){
 });
 Route::get('/trabajador', function(){
     return view('registrar_trabajador');
-});
-Route::get('/trabajadores', function(){
-    return view('trabajadores');
 });

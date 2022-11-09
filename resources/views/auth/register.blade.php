@@ -17,11 +17,11 @@ Crea tu cuenta!
                     <div class="flex flex-col">
                         <div>
                             <label class="font-bold" for="rut">Rut</label>
-                            @error('rut')
+                            @error('id')
                             <span class="text-red-600"><small>*{{$message}}</small></span>
                             @enderror
                         </div>
-                        <input class="p-2 border-4 border-gray-300 border-l-orange-500 @error('rut') border-l-red-700 @enderror" type="text" name="rut" id="rut" placeholder="Ingresa el rut" value="{{old('rut')}}">
+                        <input class="p-2 border-4 border-gray-300 border-l-orange-500 @error('id') border-l-red-700 @enderror" type="text" name="id" id="id" placeholder="Ingresa el rut" value="{{old('id')}}">
                     </div>
 
                     <div class="flex flex-col">
