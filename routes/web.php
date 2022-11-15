@@ -75,3 +75,6 @@ Route::get('/producto_detalle', function(){
 Route::get('/trabajador', function(){
     return view('registrar_trabajador');
 });
+Route::get('/categoria', function(){
+    return view('categorias');
+})->name('categoria');
