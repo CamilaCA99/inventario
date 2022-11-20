@@ -21,14 +21,10 @@ return new class extends Migration
             $table->integer('stock');
             $table->string('image')->nullable();
             $table->timestamps();
-            $table->unsignedBigInteger('category_id');
-            $table->unsignedBigInteger('company_id');
-            $table->unsignedBigInteger('worker_id');
+            $table->unsignedBigInteger('user_id');
+            
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
-
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
-            $table->foreign('worker_id')->references('id')->on('workers')->nullable()->onDelete('cascade');
         });
     }
 

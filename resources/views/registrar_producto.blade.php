@@ -54,6 +54,18 @@
             </div>
             <div class="flex flex-col">
                 <div>
+                    <label for="brand">Marca</label>
+                    @error('brand')
+                    <span class="text-red-600"><small>*{{$message}}</small></span>
+                    @enderror
+                </div>
+                {{-- <input class="p-2 border-4 border-gray-300 border-l-orange-500 @error('brand') border-l-red-700 @enderror" type="text" name="brand" id="brand" placeholder="Marca del producto" value="{{old('brand')}}"> --}}
+                <select class="p-2 border-4 border-gray-300 border-l-orange-500 @error('brand') border-l-red-700 @enderror" name="categorie" id="categorie">
+                    <option value="">Mascarillas</option>
+                </select>
+            </div>
+            <div class="flex flex-col">
+                <div>
                     <label for="code">Codigo</label>
                     @error('code')
                     <span class="text-red-600"><small>*{{$message}}</small></span>

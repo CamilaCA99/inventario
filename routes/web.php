@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\TrabajadorController;
+use App\Http\Controllers\CategoriaController;
 use GuzzleHttp\Middleware;
 
 /*
@@ -49,7 +50,7 @@ Route::controller(TrabajadorController::class)->group(function(){
     Route::post('/trabajador', 'store')->middleware('auth')->name('trabajador.store');
 });
 
-Route::controller(CategoriaController::class, function(){
+Route::controller(CategoriaController::class)->group(function(){
     Route::get('/categoria', 'index')->middleware('auth')->name('categoria');
     Route::post('/categoria', 'store')->middleware('auth')->name('categoria.store');
 });
@@ -71,6 +72,6 @@ Route::controller(UserController::class)->group(function (){
 Route::get('/producto_detalle', function(){
     return view('producto_detalle');
 });
-Route::get('/categoria', function(){
-    return view('categorias');
-})->name('categoria');
+// Route::get('/categoria', function(){
+//     return view('categorias');
+// })->name('categoria');

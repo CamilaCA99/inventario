@@ -23,17 +23,13 @@ class RegisterController extends Controller
         ]);
         //create instance
         $user = new User();
-        $company = new Company();
         //asigned data
         $user->id = $request->id;
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
-
-        $company->id = $request->id;
         //create user
         $user->save();
-        $company->save();
 
         return redirect()->route('login');
     }

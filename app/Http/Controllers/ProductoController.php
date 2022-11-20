@@ -12,6 +12,7 @@ class ProductoController extends Controller
     }
     public function store(Request $request){
 
+        // dd($request);
         $request->validate([
             'id' => 'required|unique:products|min:11|', //code product
             'name' => 'required|min:3',
@@ -20,23 +21,24 @@ class ProductoController extends Controller
             'stock' => 'required',
             'image' => 'nullable',
         ]);
+        dd($request);
         
-        //create instance
-        $product = new Product();
-        //asigned data
-        $product->id = $request->id;
-        $product->name = $request->name;
-        $product->price = $request->price;
-        $product->brand = $request->brand;
-        $product->stock = $request->stock;
-        $product->image = $request->image;
+        // //create instance
+        // $product = new Product();
+        // //asigned data
+        // $product->id = $request->id;
+        // $product->name = $request->name;
+        // $product->price = $request->price;
+        // $product->brand = $request->brand;
+        // $product->stock = $request->stock;
+        // $product->image = $request->image;
 
-        //deberia pedir aqui el id de categoria, trabajador y usuario(?
-        $product->user_id = auth()->user()->id;
-        $product->category_id = 1;
+        // //deberia pedir aqui el id de categoria, trabajador y usuario(?
+        // $product->user_id = auth()->user()->id;
+        // $product->category_id = 1;
 
-        //create user
-        $product->save();
+        // //create user
+        // $product->save();
 
         return redirect()->route('home');
     }
