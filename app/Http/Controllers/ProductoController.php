@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class ProductoController extends Controller
 {
@@ -19,6 +20,23 @@ class ProductoController extends Controller
             'stock' => 'required',
             'image' => 'nullable',
         ]);
+        
+        //create instance
+        $product = new Product();
+        //asigned data
+        $product->id = $request->id;
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->brand = $request->brand;
+        $product->stock = $request->stock;
+        $product->image = $request->image;
+
+        //deberia pedir aqui el id de categoria, trabajador y usuario(?
+        $product->user_id = auth()->user()->id;
+        $product->category_id = 1;
+
+        //create user
+        $product->save();
 
         return redirect()->route('home');
     }

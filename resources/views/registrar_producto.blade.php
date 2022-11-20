@@ -9,12 +9,13 @@
 {{-- class="grid grid-cols-1 justify-center xl:grid-cols-2 p-5"> --}}
 <main class="grid grid-cols-1 p-5 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
     <div class="p-5 flex items-center">
-        <form action="/imagen" method="POSt" enctype="multipart/form-data" id="dropzone" class="bg-white drop-shadow-lg dropzone border-dashed border-2 w-full h-96 rounded flex flex-col justify-center items-center">
+        <form for="image" action="/imagen" method="POSt" enctype="multipart/form-data" id="dropzone" class="bg-white drop-shadow-lg dropzone border-dashed border-2 w-full h-96 rounded flex flex-col justify-center items-center">
 
         </form>
     </div>
     <div class="bg-white rounded-lg p-5 drop-shadow-lg">
-        <form action="#">
+        <form action="{{route('producto.store')}}" method="POST" class="w-full">
+            @csrf
             <div class="flex flex-col">
                 <div>
                     <label for="name">Nombre</label>
@@ -44,7 +45,7 @@
             </div>
             <div class="flex flex-col">
                 <div>
-                    <label for="stock">stock</label>
+                    <label for="stock">Stock</label>
                     @error('stock')
                     <span class="text-red-600"><small>*{{$message}}</small></span>
                     @enderror
@@ -58,12 +59,12 @@
                     <span class="text-red-600"><small>*{{$message}}</small></span>
                     @enderror
                 </div>
-                <input class="p-2 border-4 border-gray-300 border-l-orange-500 @error('code') border-l-red-700 @enderror" type="number" name="code" id="code" placeholder="4589612354" value="{{old('code')}}">
+                <input class="p-2 border-4 border-gray-300 border-l-orange-500 @error('code') border-l-red-700 @enderror" type="number" name="id" id="id" placeholder="4589612354" value="{{old('code')}}">
             </div>
             <div class="pt-5 flex gap-3">
-                <button class="bg-orange-500 w-full rounded-xl hover:bg-orange-600 p-2 text-white">Registrar</button>
+                <button class="bg-orange-500 w-full rounded-xl hover:bg-orange-600 p-2 text-white" type="submit">Registrar</button>
                 <button class="bg-red-500 w-full rounded-xl hover:bg-red-600 p-2 text-white">cancelar</button>
-                <button class="bg-green-500 w-full rounded-xl hover:bg-green-600 p-2 text-white">Registrar y siguiente</button>
+                <button class="bg-green-500 w-full rounded-xl hover:bg-green-600 p-2 text-white" type="submit">Registrar y siguiente</button>
             </div>
         </form>
         

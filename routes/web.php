@@ -49,6 +49,12 @@ Route::controller(TrabajadorController::class)->group(function(){
     Route::post('/trabajador', 'store')->middleware('auth')->name('trabajador.store');
 });
 
+Route::controller(CategoriaController::class, function(){
+    Route::get('/categoria', 'index')->middleware('auth')->name('categoria');
+    Route::post('/categoria', 'store')->middleware('auth')->name('categoria.store');
+});
+
+
 
 
 /*admin routes*/

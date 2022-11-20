@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    
+    Trabajadores
 @endsection
 @section('content')
 <header class="p-5 flex gap-2 justify-between">
