@@ -8,7 +8,7 @@
 </header>
 <main class="flex justify-center p-5">
     <div class="bg-white rounded-lg w-[40%] p-5 drop-shadow-lg">
-        <form action="{{ route('trabajadores.post') }}" method="POST">
+        <form action="{{ route('trabajador.store') }}" method="POST">
             @csrf
             <div class="flex flex-col">
                 <div>

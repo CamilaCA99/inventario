@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <header class="p-5 flex gap-2 justify-between">
-    <a class="bg-orange-500 rounded-xl hover:bg-orange-600 p-2 text-white drop-shadow-lg" href="{{ route('trabajadores.show') }}">Agregar</a>
+    <a class="bg-orange-500 rounded-xl hover:bg-orange-600 p-2 text-white drop-shadow-lg" href="{{ route('trabajador.create')}}">Agregar</a>
     {{-- <div class="flex gap-2">
         <input class="rounded-full bg-white p-2 drop-shadow-lg" placeholder="Buscar" type="text">
         <select class="rounded-full bg-white p-2 drop-shadow-lg" name="#" id="#">

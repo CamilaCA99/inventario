@@ -12,10 +12,10 @@ class TrabajadorController extends Controller
     public function index(){
         return view('trabajadores');
     }
-    public function show(){
+    public function create(){
         return view('registrar_trabajador');
     }
-    public function create(Request $request){
+    public function store(Request $request){
         //get user id
         $company_id = auth()->user()->id;
         //validate data
