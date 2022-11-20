@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
+    @vite(['resources/js/nav.js', 'resources/js/app.js'])
+    <script src="/js/nav.js"></script>
+    <script src="/js/disable_form_categorie.js"></script>
     <title>@yield('title')</title>
 </head>
 <body style='background-color: #eee;'>
@@ -16,7 +18,7 @@
             <div>
                 <strong>Logo</strong>
             </div>
-            <div onclick="openMenu()" class="xl:hidden lg:hidden md:hidden">
+            <div onclick="menu()" class="xl:hidden lg:hidden md:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
                 </svg>  

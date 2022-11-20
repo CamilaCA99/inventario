@@ -3,9 +3,11 @@
     Categorias
 @endsection
 @section('content')
-<header class="p-5 flex gap-2 justify-between">
-    <h1 class="text-2xl w-full">Categorias</h1>
-    <div class="bg-white rounded-xl p-2 drop-shadow-lg flex flex-col">
+<header class="p-5 flex flex-col justify-items-center">
+    <h1>Categorias
+    </h1>
+    <button class="bg-orange-500 rounded-xl text-white p-1 mb-2 w-[10%]" onclick="disable()">Agregar</button>
+    <div class="bg-white rounded-xl p-2 drop-shadow-lg flex flex-col hidden w-[20%]" id="categories_form">
         <div class="border-b-2 flex justify-center"><h1 class="text-base">Crea una nueva categoria.</h1></div>
         <form action="">
             <div class="mt-1 flex flex-col">
@@ -14,8 +16,7 @@
             </div>
             <button class="bg-orange-500 rounded-xl text-white mt-2 p-1 w-full">Crear</button>
         </form>
-
-    
+    </div>
 </header>
 <main class="p-5">
     <div class="bg-white drop-shadow-lg rounded-lg p-2 w-[15%] flex flex-col items-center">
