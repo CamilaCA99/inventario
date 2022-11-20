@@ -8,12 +8,17 @@ use App\Models\Category;
 class CategoriaController extends Controller
 {
     public function index(){
-        return view('categorias');
+        $categories = Category::where('user_id', auth()->user()->id)->get();
+        return view('categorias', compact('categories'));
     }
 
     public function store(Request $request){
         $request->validate([
-            
+            'name' => 'required|min:4|unique:categories'
         ]);
+        $category = new Category();
+        $category->name = $request->name;
+        $category->user_id = auth()->user()->id;
+        $category->save();
     }
 }

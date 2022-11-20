@@ -54,24 +54,26 @@
             </div>
             <div class="flex flex-col">
                 <div>
-                    <label for="brand">Marca</label>
-                    @error('brand')
+                    <label for="category">Categoria</label>
+                    @error('category')
                     <span class="text-red-600"><small>*{{$message}}</small></span>
                     @enderror
                 </div>
-                {{-- <input class="p-2 border-4 border-gray-300 border-l-orange-500 @error('brand') border-l-red-700 @enderror" type="text" name="brand" id="brand" placeholder="Marca del producto" value="{{old('brand')}}"> --}}
-                <select class="p-2 border-4 border-gray-300 border-l-orange-500 @error('brand') border-l-red-700 @enderror" name="categorie" id="categorie">
-                    <option value="">Mascarillas</option>
+                <select class="p-2 border-4 border-gray-300 border-l-orange-500 @error('category') border-l-red-700 @enderror" name="category" id="category">
+                    <option selected="true" disabled="disabled">--seleccione una categoria--</option>
+                    @foreach ($categories->all() as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="flex flex-col">
                 <div>
-                    <label for="code">Codigo</label>
-                    @error('code')
+                    <label for="id">Codigo</label>
+                    @error('id')
                     <span class="text-red-600"><small>*{{$message}}</small></span>
                     @enderror
                 </div>
-                <input class="p-2 border-4 border-gray-300 border-l-orange-500 @error('code') border-l-red-700 @enderror" type="number" name="id" id="id" placeholder="4589612354" value="{{old('code')}}">
+                <input class="p-2 border-4 border-gray-300 border-l-orange-500 @error('id') border-l-red-700 @enderror" type="number" name="id" id="id" placeholder="4589612354" value="{{old('id')}}">
             </div>
             <div class="pt-5 flex gap-3">
                 <button class="bg-orange-500 w-full rounded-xl hover:bg-orange-600 p-2 text-white" type="submit">Registrar</button>
