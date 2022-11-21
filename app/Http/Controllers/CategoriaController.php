@@ -20,5 +20,13 @@ class CategoriaController extends Controller
         $category->name = $request->name;
         $category->user_id = auth()->user()->id;
         $category->save();
+
+        return redirect()->route('categoria');
+    }
+
+    public function destroy(Category $id){
+        $id->delete();
+        return redirect()->route('categoria');
+
     }
 }

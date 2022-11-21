@@ -38,4 +38,8 @@ class ProductoController extends Controller
 
         return redirect()->route('home');
     }
+    
+    public function cancel(){
+        return redirect()->route('home');
+    }
 }

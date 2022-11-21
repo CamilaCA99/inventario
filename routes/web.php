@@ -53,6 +53,7 @@ Route::controller(TrabajadorController::class)->group(function(){
 Route::controller(CategoriaController::class)->group(function(){
     Route::get('/categoria', 'index')->middleware('auth')->name('categoria');
     Route::post('/categoria', 'store')->middleware('auth')->name('categoria.store');
+    Route::delete('/categoria/{id}', 'destroy')->middleware('auth')->name('categoria.destroy');
 });
 
 
