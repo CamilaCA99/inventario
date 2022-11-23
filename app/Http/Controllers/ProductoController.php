@@ -42,4 +42,11 @@ class ProductoController extends Controller
     public function cancel(){
         return redirect()->route('home');
     }
+
+    public function filter_product(Request $request){
+        $products = Product::where('category_id', $request->filter)->get();
+        $categories = Category::where('user_id', auth()->user()->id)->get();
+        return view('filter_products', compact('products', 'categories'));
+
+    }
 }

@@ -16,7 +16,7 @@
     <nav class="bg-orange-500 md:flex md:items-center md:flex-row md:justify-between lg:flex lg:items-center lg:flex-row lg:justify-between xl:flex xl:items-center xl:flex-row xl:justify-between p-2">
         <div class="flex justify-between p-5">
             <div>
-                <strong>Logo</strong>
+                <img class="object-fill h-18 w-36" src="{{ asset('img/logo2.png') }}" alt="">
             </div>
             <div onclick="menu()" class="xl:hidden lg:hidden md:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

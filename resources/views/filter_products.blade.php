@@ -1,12 +1,11 @@
 @extends('layouts.app')
 @section('title')
-    Home
+    
 @endsection
 @section('content')
-
 <header class="px-5 pt-5 flex flex-col gap-2 justify-between">
     <div class="flex flex-col gap-2">
-        <form action="{{ route('search') }}" method="POST" class="flex gap-2">
+        <form action="#" method="POST" class="flex gap-2">
             <input class="w-full rounded-full bg-white p-2 drop-shadow-lg" placeholder="Buscar" type="text">
             <button type="submit" class="bg-white rounded-full p-3 drop-shadow-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -19,7 +18,7 @@
     </div>
     <div class="w-full flex gap-2">
         <a class="bg-orange-500 text-center rounded-xl w-[25%] hover:bg-orange-600 p-2 text-white drop-shadow-lg" href="{{ route('producto')}}">Agregar</a>
-        <form action="{{ route('filter') }}" method="POST">
+        <form action="{{ route('filter') }}" method="POST" class="w-full">
             @csrf
             <select class="rounded-full bg-white p-2 drop-shadow-lg w-full" name="filter" id="filter" onchange="this.form.submit()">
                 <option selected="true" disabled="disabled">--seleccione una categoria--</option>
@@ -44,17 +43,5 @@
         </div>
     @endforeach
 </main>
-
-
-<script>
-    const openMenu = () => {
-            const menu = document.getElementById('menu');
-            if(menu.classList.contains('hidden')){
-                menu.classList.remove('hidden');
-            }else{
-                menu.classList.add('hidden');
-            }
-        }
-</script>
     
 @endsection

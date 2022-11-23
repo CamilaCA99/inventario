@@ -3,11 +3,11 @@
     Categorias
 @endsection
 @section('content')
-<header class="p-5 flex flex-col justify-center align-center">
+<header class="px-5 pt-5 flex flex-col justify-center align-center">
     {{-- <h1>Categorias
     </h1> --}}
-    <button class="bg-orange-500 rounded-xl text-white p-1 mb-2 w-[10%]" onclick="disable()">Agregar</button>
-    <div class="bg-white rounded-xl p-2 drop-shadow-lg flex flex-col hidden w-[20%]" id="categories_form">
+    <button class="bg-orange-500 rounded-xl text-white p-1 mb-2 w-full" onclick="disable()" id="btn-form-add-category">Agregar</button>
+    <div class="bg-white rounded-xl p-2 drop-shadow-lg flex flex-col hidden w-full" id="categories_form">
         <div class="border-b-2 flex justify-center"><h1 class="text-base">Crea una nueva categoria.</h1></div>
         <form action="{{ route('categoria.store') }}" method="POST">
             @csrf
@@ -19,9 +19,9 @@
         </form>
     </div>
 </header>
-<main class="p-5">
+<main class="p-5 flex flex-col gap-2 xl:grid xl:grid-cols-4 lg:grid lg:grid-cols-4 md:grid md:grid-cols-3 sm:grid sm:grid-cols-2">
     @foreach ($categories->all() as $category)
-    <div class="bg-white drop-shadow-lg rounded-lg p-2 w-[15%] flex flex-col items-center">
+    <div class="bg-white drop-shadow-lg rounded-lg p-2  flex flex-col items-center">
         <div class="rounded-full border-solid border-2 border-gray-500 p-2">
             <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859m-19.5.338V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H6.911a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661z" />

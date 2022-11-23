@@ -42,6 +42,8 @@ Route::get('/home', [HomeController::class, 'index'])->middleware('auth')->name(
 Route::controller(ProductoController::class)->group(function(){
     Route::get('/producto', 'index')->middleware('auth')->name('producto');
     Route::post('/producto','store')->middleware('auth')->name('producto.store');
+    Route::post('/producto/filter', 'filter_product')->middleware('auth')->name('filter');
+    Route::post('/producto/search', 'search_product')->middleware('auth')->name('search');
 });
 
 Route::controller(TrabajadorController::class)->group(function(){
