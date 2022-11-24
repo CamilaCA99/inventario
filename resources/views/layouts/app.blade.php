@@ -27,7 +27,6 @@
         </div>
         <div class="flex flex-col xl:flex-row lg:flex-row md:flex-row gap-3 hidden lg:inline-flex xl:inline-flex md:inline-flex" id="menu">
             <a class="flex justify-end p-2 rounded-xl hover:bg-orange-600" href="{{ route('home')}}">Productos</a>
-            <a class="flex justify-end p-2 rounded-xl hover:bg-orange-600" href="{{ route('trabajador')}}">Trabajadores</a>
             <a class="flex justify-end p-2 rounded-xl hover:bg-orange-600" href="{{ route('categoria') }}">Categorias</a>
 
             <form action="{{route('logout')}}" method="POST">
