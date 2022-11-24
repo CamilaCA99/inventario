@@ -7,8 +7,8 @@
     <h1 class="text-3xl">{{$product->name}}</h1>
 </header>
 <main class="grid justify-center p-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
-    <div class="p-5 flex items-center">
-        insertar la imagen aqui
+    <div class="p-5 flex items-center justify-center">
+        <img class="max-w-full h-auto rounded-full" src="{{asset('posts').'/'.$product->image}}" alt="">
     </div>
     <div class="bg-white rounded-lg p-5 drop-shadow-lg">
         <div class="flex flex-col p-3">
@@ -73,6 +73,13 @@
             </div>
             <!-- Modal body -->
             <div class="p-6 space-y-6">
+                <div class="p-5 flex items-center">
+                    <form for="image" action="{{route('image.update', $product->id)}}" method="POST" enctype="multipart/form-data" id="dropzone" class="bg-white drop-shadow-lg dropzone border-dashed border-2 w-full h-96 rounded flex flex-col justify-center items-center">
+                        @csrf
+                        @method('PATCH')
+                    </form>
+                </div>
+                
                 <form action="{{ route('producto.update', $product->id) }}" method="post">
                     @csrf
                     @method('PATCH')
@@ -126,6 +133,15 @@
                             @endforeach
                         </select>
                     </div>
+                    {{-- <div class="flex flex-col">
+                        <div>
+                            <label for="image">Imagen</label>
+                            @error('image')
+                            <span class="text-red-600"><small>*{{$message}}</small></span>
+                            @enderror
+                        </div>
+                        <input class=" border-4 border-gray-300 border-l-orange-500 @error('image') border-l-red-700 @enderror" type="file" name="image" id="image">
+                    </div> --}}
                     <div class="flex flex-col">
                         <div>
                             <label for="code">Codigo</label>

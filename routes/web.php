@@ -62,4 +62,5 @@ Route::controller(CategoriaController::class)->group(function(){
 
 Route::controller(ImageController::class)->group(function(){
     Route::post('/image', 'store')->middleware('auth')->name('image.store');
+    Route::patch('/image', 'update')->middleware('auth')->name('image.update');
 });

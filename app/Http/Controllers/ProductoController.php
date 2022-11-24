@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image;
 use App\Models\Product;
 use App\Models\Category;
 
@@ -67,10 +69,25 @@ class ProductoController extends Controller
     }
 
     public function update(Product $id, Request $request){
+
+        // if($request->image){
+        //     $image = $request->file('file');
+        //     dd($request);
+
+        //     $imageName = Str::uuid() . "." . $image->extension();
+
+        //     $imageServidor = Image::make($image);
+        //     $imageServidor -> fit(200,200);
+
+        //     $imagePath = public_path('posts') . '/' . $imageName;
+        //     $imageServidor->save($imagePath);
+        // }
+
         $id->name = $request->name;
         $id->price = $request->price;
         $id->brand = $request->brand;
         $id->stock = $request->stock;
+        // $id->image = $imageName ?? auth()->user()->image ?? '';
         $id->user_id = auth()->user()->id;
         $id->category_id = $request->category;
         $id->save();
