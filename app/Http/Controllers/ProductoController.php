@@ -38,6 +38,11 @@ class ProductoController extends Controller
 
         return redirect()->route('home');
     }
+    public function show($id){
+        $product = Product::findOrFail($id);
+        $categories = Category::where('user_id', auth()->user()->id)->get();
+        return view('producto_detalle', compact('product', 'categories'));
+    }
     
     public function cancel(){
         return redirect()->route('home');
@@ -47,6 +52,28 @@ class ProductoController extends Controller
         $products = Product::where('category_id', $request->filter)->get();
         $categories = Category::where('user_id', auth()->user()->id)->get();
         return view('filter_products', compact('products', 'categories'));
+    }
 
+    public function search(Request $request){
+        $search_result = Product::where('name', 'LIKE', "%{$request->search}%")->get();
+        $categories = Category::where('user_id', auth()->user()->id)->get();
+        return view('search', compact('search_result', 'categories'));
+
+    }
+
+    public function destroy(Product $id){
+        $id->delete();
+        return redirect()->route('home');
+    }
+
+    public function update(Product $id, Request $request){
+        $id->name = $request->name;
+        $id->price = $request->price;
+        $id->brand = $request->brand;
+        $id->stock = $request->stock;
+        $id->user_id = auth()->user()->id;
+        $id->category_id = $request->category;
+        $id->save();
+        return redirect()->route('producto.show', $id);
     }
 }

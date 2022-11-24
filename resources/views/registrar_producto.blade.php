@@ -77,7 +77,7 @@
             </div>
             <div class="pt-5 flex gap-3">
                 <button class="bg-orange-500 w-full rounded-xl hover:bg-orange-600 p-2 text-white" type="submit">Registrar</button>
-                <button class="bg-red-500 w-full rounded-xl hover:bg-red-600 p-2 text-white">cancelar</button>
+                <button class="bg-red-500 w-full rounded-xl hover:bg-red-600 p-2 text-white" type="reset">cancelar</button>
                 <button class="bg-green-500 w-full rounded-xl hover:bg-green-600 p-2 text-white" type="submit">Registrar y siguiente</button>
             </div>
         </form>

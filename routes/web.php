@@ -43,7 +43,10 @@ Route::controller(ProductoController::class)->group(function(){
     Route::get('/producto', 'index')->middleware('auth')->name('producto');
     Route::post('/producto','store')->middleware('auth')->name('producto.store');
     Route::post('/producto/filter', 'filter_product')->middleware('auth')->name('filter');
-    Route::post('/producto/search', 'search_product')->middleware('auth')->name('search');
+    Route::post('/producto/search', 'search')->middleware('auth')->name('search');
+    Route::get('/producto/{id}', 'show')->middleware('auth')->name('producto.show');
+    Route::delete('/producto/{id}', 'destroy')->middleware('auth')->name('producto.destroy');
+    Route::patch('/producto/{id}', 'update')->middleware('auth')->name('producto.update');
 });
 
 Route::controller(TrabajadorController::class)->group(function(){
