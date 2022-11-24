@@ -28,7 +28,7 @@ class ProductoController extends Controller
         //create instance
         $product = new Product();
         //asigned data
-        $product->id = $request->code;
+        $product->id = $request->id;
         $product->name = $request->name;
         $product->price = $request->price;
         $product->brand = $request->brand;

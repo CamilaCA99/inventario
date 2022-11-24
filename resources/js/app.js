@@ -16,6 +16,9 @@ const dropzone = new Dropzone('#dropzone', {
         const imagePost = {}
         imagePost.size = 1234;
         imagePost.name = document.querySelector('[name="image"]').value;
+        this.on("maxfilesexceeded", function(file){
+            alert("No more files please!");
+        });
 
         this.options.addedfile.call(this, imagePost);
         this.options.thumbnail.call(this, imagePost, '/posts/${imagePost.name}');
@@ -23,6 +26,10 @@ const dropzone = new Dropzone('#dropzone', {
         imagePost.previewElement.classList.add("dz-success", "dz-complete");
         }
     },
+    maxfilesexceeded: function (files) {
+        this.removeAllFiles();
+        this.addFile(files);
+      },
 });
 
 dropzone.on("success", function(file, response) {

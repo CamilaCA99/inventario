@@ -74,7 +74,7 @@
             <!-- Modal body -->
             <div class="p-6 space-y-6">
                 <div class="p-5 flex items-center">
-                    <form for="image" action="{{route('image.update', $product->id)}}" method="POST" enctype="multipart/form-data" id="dropzone" class="bg-white drop-shadow-lg dropzone border-dashed border-2 w-full h-96 rounded flex flex-col justify-center items-center">
+                    <form for="image" action="{{route('image.update', $product->id)}}" method="POST" enctype="multipart/form-data" id="dropzone" class="bg-white drop-shadow-lg dropzone border-dashed border-2 w-full h-10 rounded flex flex-col justify-center items-center">
                         @csrf
                         @method('PATCH')
                     </form>
@@ -151,7 +151,6 @@
                         <button data-modal-toggle="medium-modal" type="submit" class="text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800">Guardar</button>
                         <button data-modal-toggle="medium-modal" type="reset" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cancelar</button>
                     </div>
-
                 </form>
             </div>
         </div>
