@@ -133,15 +133,11 @@
                             @endforeach
                         </select>
                     </div>
-                    {{-- <div class="flex flex-col">
-                        <div>
-                            <label for="image">Imagen</label>
-                            @error('image')
-                            <span class="text-red-600"><small>*{{$message}}</small></span>
-                            @enderror
-                        </div>
-                        <input class=" border-4 border-gray-300 border-l-orange-500 @error('image') border-l-red-700 @enderror" type="file" name="image" id="image">
-                    </div> --}}
+
+                    <div>
+                        <input type="hidden" name="image" value="{{ old('image') }}">
+                    </div>
+
                     <div class="flex flex-col">
                         <div>
                             <label for="code">Codigo</label>

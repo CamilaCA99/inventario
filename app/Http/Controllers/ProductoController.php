@@ -87,14 +87,11 @@ class ProductoController extends Controller
         $id->price = $request->price;
         $id->brand = $request->brand;
         $id->stock = $request->stock;
-        // $id->image = $imageName ?? auth()->user()->image ?? '';
+        $id->image = $request->image;
         $id->user_id = auth()->user()->id;
         $id->category_id = $request->category;
         $id->save();
         return redirect()->route('producto.show', $id);
     }
     
-    public function file(Request $request){
-        
-    }
 }

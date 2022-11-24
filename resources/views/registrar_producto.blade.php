@@ -8,6 +8,7 @@
 <header class=" p-5 flex justify-center">
     <h1 class="text-2xl">Producto</h1>
 </header>
+
 {{-- class="grid grid-cols-1 justify-center xl:grid-cols-2 p-5"> --}}
 <main class="grid grid-cols-1 p-5 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
     <div class="p-5 flex items-center">
@@ -77,9 +78,11 @@
                 </div>
                 <input class="p-2 border-4 border-gray-300 border-l-orange-500 @error('id') border-l-red-700 @enderror" type="number" name="id" id="id" placeholder="4589612354" value="{{old('id')}}">
             </div>
+
             <div>
                 <input type="hidden" name="image" value="{{ old('image') }}">
             </div>
+
             <div class="pt-5 flex gap-3">
                 <button class="bg-orange-500 w-full rounded-xl hover:bg-orange-600 p-2 text-white" type="submit">Registrar</button>
                 <button class="bg-red-500 w-full rounded-xl hover:bg-red-600 p-2 text-white" type="reset">cancelar</button>

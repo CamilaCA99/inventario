@@ -9,6 +9,7 @@
     <script src="/js/nav.js"></script>
     <script src="/js/disable_form_categorie.js"></script>
     <title>@yield('title')</title>
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 </head>
 <body style='background-color: #eee;'>
 
