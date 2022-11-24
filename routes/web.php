@@ -9,6 +9,7 @@ use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\TrabajadorController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ImageController;
 use GuzzleHttp\Middleware;
 
 /*
@@ -27,8 +28,6 @@ Route::controller(LoginController::class)->middleware('guest')->group(function (
     Route::get('/login', 'index')->name('login');
     Route::post('/login', 'store')->name('login.store');
 });
-
-
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 
@@ -61,23 +60,6 @@ Route::controller(CategoriaController::class)->group(function(){
     Route::delete('/categoria/{id}', 'destroy')->middleware('auth')->name('categoria.destroy');
 });
 
-
-
-
-/*admin routes*/
-Route::controller(UserController::class)->group(function (){
-    Route::get('/users','index');
-    Route::post('/users/create', 'create');
-    Route::post('/users/update/{username}','update');
-    Route::delete('/users/delete/{username}','destroy');
+Route::controller(ImageController::class)->group(function(){
+    Route::post('/image', 'store')->middleware('auth')->name('image.store');
 });
-
-
-
-//rutas de prueba
-Route::get('/producto_detalle', function(){
-    return view('producto_detalle');
-});
-// Route::get('/categoria', function(){
-//     return view('categorias');
-// })->name('categoria');

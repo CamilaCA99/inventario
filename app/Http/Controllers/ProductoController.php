@@ -31,7 +31,7 @@ class ProductoController extends Controller
         $product->price = $request->price;
         $product->brand = $request->brand;
         $product->stock = $request->stock;
-        // $product->image = $request->image;
+        $product->image = $request->image;
         $product->user_id = auth()->user()->id;
         $product->category_id = $request->category;
         $product->save();
@@ -75,5 +75,9 @@ class ProductoController extends Controller
         $id->category_id = $request->category;
         $id->save();
         return redirect()->route('producto.show', $id);
+    }
+    
+    public function file(Request $request){
+        
     }
 }

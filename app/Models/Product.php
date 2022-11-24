@@ -16,6 +16,5 @@ class Product extends Model
         'stock',
         'user_id',
         'category_id'
-        //faltaria id trabajador y usuario(?
     ];
 }

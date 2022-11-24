@@ -3,14 +3,16 @@
     Producto
 @endsection
 @section('content')
+
+
 <header class=" p-5 flex justify-center">
     <h1 class="text-2xl">Producto</h1>
 </header>
 {{-- class="grid grid-cols-1 justify-center xl:grid-cols-2 p-5"> --}}
 <main class="grid grid-cols-1 p-5 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
     <div class="p-5 flex items-center">
-        <form for="image" action="/imagen" method="POSt" enctype="multipart/form-data" id="dropzone" class="bg-white drop-shadow-lg dropzone border-dashed border-2 w-full h-96 rounded flex flex-col justify-center items-center">
-
+        <form for="image" action="{{route('image.store')}}" method="POST" enctype="multipart/form-data" id="dropzone" class="bg-white drop-shadow-lg dropzone border-dashed border-2 w-full h-96 rounded flex flex-col justify-center items-center">
+            @csrf
         </form>
     </div>
     <div class="bg-white rounded-lg p-5 drop-shadow-lg">
@@ -74,6 +76,9 @@
                     @enderror
                 </div>
                 <input class="p-2 border-4 border-gray-300 border-l-orange-500 @error('id') border-l-red-700 @enderror" type="number" name="id" id="id" placeholder="4589612354" value="{{old('id')}}">
+            </div>
+            <div>
+                <input type="hidden" name="image" value="{{ old('image') }}">
             </div>
             <div class="pt-5 flex gap-3">
                 <button class="bg-orange-500 w-full rounded-xl hover:bg-orange-600 p-2 text-white" type="submit">Registrar</button>
